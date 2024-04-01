@@ -18,10 +18,11 @@
 import re
 import sys
 import importlib
+import os
 
 def main(argv):
     importlib.reload(sys)
-    original_file = 'vendor/aosp/prebuilt/common/etc/apns-conf.xml'
+    original_file = os.environ['CUSTOM_VENDOR_DIR'] + '/prebuilt/common/etc/apns-conf.xml'
 
     if len(argv) == 3:
         output_file_path = argv[1]
